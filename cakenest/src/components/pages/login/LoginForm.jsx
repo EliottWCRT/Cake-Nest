@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IoChevronForward } from "react-icons/io5";
 import styled from "styled-components";
-import { theme } from  "../../../../public/index.js";
+import TextInput from "../../reusable-ui/TextInput";
+import { BsPersonCircle } from "react-icons/bs";
+import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import { theme } from "../../../theme";
 
 export default function LoginForm() {
     const [inputValue, setInputValue] = useState("");
@@ -18,19 +22,18 @@ export default function LoginForm() {
     };
 
     return (
-        <LoginFormStyled>
-            <form onSubmit={handleSubmit}>
-                <h1>Bienvenue chez nous !</h1>
-                <hr />
-                <h2>Connectez-vous</h2>
-                <input value={inputValue} onChange={handlechange} placeholder={"Entrez votre prénom"} required />
+        <LoginFormStyled onSubmit={handleSubmit}>
+            <h1>Bienvenue chez nous !</h1>
+            <hr />
+            <h2>Connectez-vous</h2>
+            <TextInput value={inputValue} onChange={handlechange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className="icon" />} />
 
-                <button>Mon espace</button>
-            </form>
+            <PrimaryButton Icon={<IoChevronForward className="icon"/>} label={"Mon espace"}/>
         </LoginFormStyled>
     );
 }
-const LoginFormStyled =  styled.form `
+
+const LoginFormStyled = styled.form`
     text-align: center;
     max-width: 500px;
     min-width: 400px;
@@ -38,21 +41,28 @@ const LoginFormStyled =  styled.form `
     padding: 40px ${theme.spacing.lg};
     border-radius: ${theme.borderRadius.round};
     font-family: "Pacifico", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
+
+    hr {
+        border: 1.5px solid ${theme.colors.loginLine};
+        margin-bottom: ${theme.gridUnit * 5}px;
+    }
 
     h1 {
-        margin: 20px 10px 10px;
-        color: white;
+        color: ${theme.colors.white};
+        font-size: ${theme.fonts.size.P5};
     }
-    hr { 
-        border: 1.5px solid ${theme.colors.loginLine}
-        margin-bottom ;
-    }
+
     h2 {
-        color: white;
+        margin: 20px 10px 10px;
+        color: ${theme.colors.white};
+        font-size: ${theme.fonts.size.P4};
     }
-`
+
+    .icon {
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+        font-size: ${theme.fonts.size.P0};
+        margin-left: 10px;
+    }
+`;
