@@ -1,34 +1,29 @@
-import React from 'react'
-import styled from "styled-components";
-import { theme } from "../../../theme";
-import Logo from '../../reusable-ui/Logo';
-import Profile from './Profile';
+import styled from "styled-components"
+import NavbarRightSide from "./NavbarRightSide"
+import Logo from "../../reusable-ui/Logo"
+import { theme } from "../../../theme"
+import { refreshPage } from "../../../utils/window"
 
-function Navbar({ username }) {
+export default function Navbar({ username }) {
   return (
     <NavbarStyled>
-
-        <Logo  />
-        <div className='profilStyle'>
-          <Profile username={username} />
-        </div>
-    
+      <Logo className="logo-order-page" onClick={() => refreshPage()} />
+      <NavbarRightSide username={username} />
     </NavbarStyled>
-
   )
 }
 
-export default Navbar
-const NavbarStyled = styled.div `
-  box-shadow: 0px 10px 50px 0px rgba(41,41,41,1);
+const NavbarStyled = styled.nav`
+  background: ${theme.colors.white};
+  height: 10vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px 0px 20px;
+  padding: 0 20px;
 
-  .profilStyle {
-    font-family: "Open Sans", sans-serif;
+  border-top-left-radius: ${theme.borderRadius.extraRound};
+  border-top-right-radius: ${theme.borderRadius.extraRound};
+
+  .logo-order-page {
+    cursor: pointer;
   }
-
-
 `
