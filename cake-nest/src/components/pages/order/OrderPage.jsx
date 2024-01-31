@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../../../theme"
+import { theme } from "../../../theme";
+import Navbar from "./Navbar";
+
 
 
 export default function OrderPage(props) {
     const {username} = useParams();
-
     return (
         <OrderPageStyled>
             <div className="container">
-                <h1>Bonjour {username}</h1>
-                <Link to={"/"}>
-                    <button>Se déconnecter</button>
-                </Link>
+                <Navbar username={username} />
             </div>
         </OrderPageStyled>
     );
@@ -29,10 +27,12 @@ const OrderPageStyled = styled.div `
     .container {
         height: 95vh;
         width: 1400px;
-        display: flex;
-        flex-direction: column;
+        text-align: center;
         background-color: white;
         border-radius: 15px;
+        margin: auto; 
+        padding: auto;
+
     }
-    `
+`
 
