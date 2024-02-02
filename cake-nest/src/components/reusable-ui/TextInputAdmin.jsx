@@ -6,7 +6,7 @@ function TextInputAdmin() {
     <TextInputStyled>
         <input type='text'/>
         <input type='image' />
-        <input type='number' />
+        <input type='number' step={0.01} min={0} max={100} />
     </TextInputStyled>
   )
 }

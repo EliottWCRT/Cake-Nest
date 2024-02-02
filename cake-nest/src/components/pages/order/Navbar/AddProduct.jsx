@@ -5,11 +5,10 @@ import ButtonAdmin from '../../../reusable-ui/ButtonAdmin'
 
 function AddProduct() {
   return (
-    <AddProduct>
+    <AddStyled>
         <TextInputAdmin />
         <ButtonAdmin />
- 
-    </AddProduct>
+    </AddStyled>
   )
 }
 const AddStyled = styled.div``

@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../../theme"
+import AddProduct from "../../components/pages/order/Navbar/AddProduct"
 
 export default function Tab({ label, Icon, onClick, className }) {
   return (
