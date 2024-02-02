@@ -35,8 +35,8 @@ const PrimaryButtonStyled = styled.button`
     transition: all 200ms ease-out;
   }
   :active {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.white};
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.primary};
   }
 
   &.is-disabled {

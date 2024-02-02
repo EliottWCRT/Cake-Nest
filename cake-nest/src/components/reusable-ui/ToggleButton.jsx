@@ -1,31 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { theme } from "../../../../theme/index"
-import { toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
-
+import { theme } from "../../theme"
 
 export default function ToggleButton({
-    isChecked,
-    onToggle,
-    labelIfChecked = "Désactiver le mode Admin",
-    labelIfUnchecked = "Activer le mode Admin",
+  isChecked,
+  onToggle,
+  labelIfChecked = "Fermer",
+  labelIfUnchecked = "Ouvrir",
 }) {
-  const notify = () => toast.info('Vous êtes passé en mode administrateur !', {
-    position: "bottom-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: "Bounce",
-    });
   return (
-
     <ToggleButtonStyled>
-      <input onClick={notify}
+      <input
         type="checkbox"
         className="toggle"
         id="rounded"
@@ -41,7 +26,6 @@ export default function ToggleButton({
     </ToggleButtonStyled>
   )
 }
-
 
 const ToggleButtonStyled = styled.div`
 
