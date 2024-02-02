@@ -11,7 +11,11 @@ function AddProduct() {
     </AddStyled>
   )
 }
-const AddStyled = styled.div``
+const AddStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+`
 
 
 
